@@ -1,0 +1,26 @@
+<div class="chat-viewport">
+    <div class="message-list-container" #scrollContainer>
+        @for (msg of messages(); track msg.id) {
+        <app-message-item [message]="msg"></app-message-item>
+        } @empty {
+        @if (!isLoading) {
+        <p class="empty-state">Posez-moi une question pour commencer.</p>
+        }
+        }
+
+        @if (isLoading) {
+        <div class="loader-container">
+            <div class="gemini-loader">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <p>Gemini réfléchit...</p>
+        </div>
+        }
+    </div>
+
+    <div class="input-anchor">
+        <app-message-input (sendMessage)="onNewMessage($event)"></app-message-input>
+    </div>
+</div>

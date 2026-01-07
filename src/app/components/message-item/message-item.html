@@ -1,0 +1,19 @@
+<div class="message-wrapper" [class.user]="message().role === 'user'"
+    [class.assistant]="message().role === 'assistant'">
+
+    @if (message().role === 'assistant') {
+    <div class="avatar-assistant">
+        <span class="sparkle-icon">✦</span>
+    </div>
+    }
+
+    <div class="message-container">
+        <div class="message-content">
+            {{ message().text }}
+        </div>
+
+        <div class="message-footer">
+            <span class="timestamp">{{ message().timestamp | date:'HH:mm' }}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+.chat-viewport {
+    display: flex;
+    flex-direction: column;
+    height: 82vh;
+    /* Prend tout l'écran */
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Empêche la page entière de bouger */
+}
+
+.message-list-container {
+    flex: 1;
+    /* Remplit l'espace au-dessus de l'input */
+    overflow-y: auto;
+    /* Active le scroll uniquement ici */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+
+/* --- SCROLLBAR STYLE --- */
+.message-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.message-list-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.message-list-container::-webkit-scrollbar-thumb {
+    background-color: #3c4043;
+    border-radius: 10px;
+}
+
+/* --- LOADER & ERRORS --- */
+.gemini-loader {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.gemini-loader .dot {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(90deg, #4285f4, #9b72cb, #d96570);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.gemini-loader .dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.gemini-loader .dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.0);
+    }
+}
+
+.error-box {
+    background: rgba(217, 101, 112, 0.1);
+    border: 1px solid #d96570;
+    padding: 12px;
+    border-radius: 8px;
+    color: #d96570;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.input-anchor {
+    padding: 10px 0 30px 0;
+    background: #131314;
+    /* Ta couleur de fond */
+}

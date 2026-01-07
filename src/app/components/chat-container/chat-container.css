@@ -1,0 +1,38 @@
+/* On s'assure que le container ne dépasse pas et reste centré */
+.chat-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Utilise le minimum de hauteur de l'écran */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.chat-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.chat-header h1 {
+    font-size: 1.5rem;
+    background: var(--gemini-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* La liste de messages grandit pour pousser l'input en bas */
+app-message-list {
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* L'input reste en bas de la vue */
+.chat-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--gemini-bg);
+    padding-top: 10px;
+}

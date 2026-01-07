@@ -1,0 +1,10 @@
+<div class="input-wrapper">
+    <form (ngSubmit)="onSubmit()" class="input-form">
+        <textarea [(ngModel)]="messageText" name="message" placeholder="Écrivez votre message..."
+            (keydown)="handleKeyDown($event)" rows="1"></textarea>
+
+        <button type="submit" [disabled]="!messageText().trim()">
+            <span class="send-icon">➤</span>
+        </button>
+    </form>
+</div>

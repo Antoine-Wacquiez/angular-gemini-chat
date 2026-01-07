@@ -1,0 +1,73 @@
+:host {
+    display: block;
+    margin-bottom: 2rem;
+    color: #e3e3e3;
+}
+
+.message-wrapper {
+    display: flex;
+    gap: 16px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* --- Style Utilisateur --- */
+.message-wrapper.user {
+    flex-direction: row-reverse;
+    /* Aligné à droite */
+}
+
+.message-wrapper.user .message-content {
+    background-color: var(--gemini-surface);
+    padding: 12px 20px;
+    border-radius: 20px;
+    color: var(--gemini-text);
+    display: inline-block;
+}
+
+/* --- Style Assistant (Gemini) --- */
+.message-wrapper.assistant {
+    align-items: flex-start;
+}
+
+.avatar-assistant {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gemini-gradient);
+    /* Le dégradé défini dans app.css */
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.sparkle-icon {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.message-wrapper.assistant .message-content {
+    line-height: 1.6;
+    font-size: 16px;
+    color: var(--gemini-text);
+    padding-top: 8px;
+}
+
+/* --- Footer & Timestamp --- */
+.message-footer {
+    margin-top: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.message-wrapper:hover .message-footer {
+    opacity: 1;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #8e918f;
+}
